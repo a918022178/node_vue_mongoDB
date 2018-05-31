@@ -72,7 +72,7 @@ router.post('/api/user/login', (req, res) => {
     (err, data) => {
       if (err) {
         // res.send(err);
-        res.send({ status: 1001, message: '用户不存在!', data: err })
+        // res.send({ status: 1001, message: '用户不存在!', data: err })
       } else {
         // console.log(data)
         if (data.length > 0) {
@@ -205,4 +205,9 @@ router.post('/api/user/delete', (req, res) => {
     }
   )
 })
+router.get('/api/test', (req, res) => {
+//   console.log(req.query)
+  res.send(JSON.stringify(req.query))
+})
+
 module.exports = router

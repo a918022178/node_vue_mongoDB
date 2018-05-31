@@ -4,6 +4,9 @@
     <input @change="change" ref="file" type="file" accept="image/jpg,image/jpeg,image/png">
     <img width="100" :src="url" alt="">
     <button @click="submit">修改</button>
+    <div class="aa">
+      <h1>sdfksdafsdabfkads</h1>
+    </div>
   </div>
 </template>
 <script>

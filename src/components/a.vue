@@ -13,6 +13,9 @@
       <span>{{v.date}}</span>
       <button v-show="v.account === result.account" style="float:right" @click="del(v.txt)">删除</button>
     </div>
+    <div class="aa">
+      <h1>sdfksdafsdabfkads</h1>
+    </div>
   </div>
 </template>
 
@@ -39,6 +42,20 @@ export default {
     this.$http.post('/api/user/all').then(data => {
       this.list = data.body
       // this.list.reverse()
+    })
+    // this.$ajax({
+    //   method: 'get',
+    //   url: '/api/test?p=0',
+    //   params: {
+    //     name: 'wise',
+    //     info: 'wrong'
+    //   }
+    // }).then((data) => {
+    //   console.log(data)
+    // })
+    var params = {name: 'wise', info: 'wrong'}
+    this.$http.get('/api/test', {params}).then((data) => {
+      console.log(data)
     })
   },
   methods: {
@@ -69,7 +86,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
   img{
     width: 100px;
   }
@@ -86,5 +103,10 @@ export default {
   }
   .shuo img span{
     vertical-align: middle;
+  }
+  .aa{
+    h1{
+      color: aqua;
+    }
   }
 </style>
